@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import User from '../../types/User';
+import User from '../../interfaces/User';
 
 type BalanceProps = {
   user: User;

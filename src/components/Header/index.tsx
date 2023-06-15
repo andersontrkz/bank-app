@@ -1,6 +1,6 @@
 import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'; 
-import User from '../../types/User';
+import User from '../../interfaces/User';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 24 : 72;
 
