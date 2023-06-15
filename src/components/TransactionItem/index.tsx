@@ -4,6 +4,7 @@ import { useShowContent } from '../../contexts/useShowContent';
 import { dateTimeFormat } from '../../utils/datetime';
 import Transaction from '../../interfaces/Transaction';
 import TypeTransaction from '../../enums/TypeTransaction';
+import { formatCurrency } from '../../utils/currency';
 
 type TransactionProps = {
     transaction: Transaction;
@@ -35,7 +36,7 @@ export default function TransactionItem({ transaction }: TransactionProps) {
               animate={{ translateX: 0 }}
               transition={{ type: 'timing' }}
             >
-              {transaction.type === TypeTransaction.Expense ? `R$ -${transaction.value}` : `R$ ${transaction.value}`}
+              {transaction.type === TypeTransaction.Expense ? `R$ -${formatCurrency(transaction.value)}` : `R$ ${formatCurrency(transaction.value)}`}
             </MotiText> 
         </AnimatePresence>
         }

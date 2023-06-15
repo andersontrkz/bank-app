@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { AnimatePresence, MotiText, MotiView } from 'moti';
 import { useShowContent } from '../../contexts/useShowContent';
 import User from '../../interfaces/User';
+import { formatCurrency } from '../../utils/currency';
 
 type BalanceProps = {
   user: User;
@@ -9,7 +10,6 @@ type BalanceProps = {
 
 export default function Balance({ user: { balance, expenses } }: BalanceProps) {
   const { showContent } = useShowContent();
-  const convertToCurrency = (value: number) => Intl.NumberFormat('pt-BR').format(value);
 
   return (
     <MotiView style={styles.container}
@@ -48,7 +48,7 @@ export default function Balance({ user: { balance, expenses } }: BalanceProps) {
                 animate={{ translateX: 0 }}
                 transition={{ type: 'timing', duration: 320 }}
               >
-                {convertToCurrency(balance)}
+                {formatCurrency(balance)}
               </MotiText> 
           </AnimatePresence>
           }
@@ -76,7 +76,7 @@ export default function Balance({ user: { balance, expenses } }: BalanceProps) {
                 animate={{ translateX: 0 }}
                 transition={{ type: 'timing', duration: 320 }}
               >
-                {convertToCurrency(expenses)}
+                {formatCurrency(expenses)}
               </MotiText> 
           </AnimatePresence>
           }
@@ -89,6 +89,7 @@ export default function Balance({ user: { balance, expenses } }: BalanceProps) {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#fff',
+    borderRadius: 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 24,
