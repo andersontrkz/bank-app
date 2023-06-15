@@ -2,12 +2,18 @@ import { StyleSheet, Text, View } from 'react-native';
 import Balance from '../../components/Balance';
 import Header from '../../components/Header';
 
+const user = {
+  name: 'Anderson Luiz',
+  balance: 18630.33,
+  expenses: -912.15,
+}
+
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Header username="Anderson Luiz" />
+      <Header user={user} />
       
-      <Balance />
+      <Balance user={user} />
     </View>
   );
 }
