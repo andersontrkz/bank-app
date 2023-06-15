@@ -44,7 +44,7 @@ export default function Actions() {
 
 const styles = StyleSheet.create({
   container: {
-    maxHeight: 84,
+    height: 140,
 		marginVertical: 16,
 		paddingHorizontal: 16,
   },

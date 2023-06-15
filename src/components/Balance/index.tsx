@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { MotiView } from 'moti';
+import { AnimatePresence, MotiText, MotiView } from 'moti';
+import { useShowContent } from '../../contexts/useShowContent';
 import User from '../../interfaces/User';
 
 type BalanceProps = {
@@ -7,6 +8,7 @@ type BalanceProps = {
 }
 
 export default function Balance({ user: { balance, expenses } }: BalanceProps) {
+  const { showContent } = useShowContent();
   const convertToCurrency = (value: number) => Intl.NumberFormat('pt-BR').format(value);
 
   return (
@@ -29,7 +31,27 @@ export default function Balance({ user: { balance, expenses } }: BalanceProps) {
         <Text style={styles.itemTitle}>Saldo</Text>
         <View style={styles.itemContent}>
           <Text style={styles.itemCurrency}>R$</Text>
-          <Text style={styles.itemBalance}>{convertToCurrency(balance)}</Text>
+          {
+            showContent ? 
+            <AnimatePresence exitBeforeEnter>
+              <MotiView
+                style={styles.skeleton}
+                from={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ type: 'timing' }}
+              />
+            </AnimatePresence> :
+            <AnimatePresence exitBeforeEnter>
+              <MotiText
+                style={styles.itemBalance}
+                from={{ translateX: 120 }}
+                animate={{ translateX: 0 }}
+                transition={{ type: 'timing', duration: 320 }}
+              >
+                {convertToCurrency(balance)}
+              </MotiText> 
+          </AnimatePresence>
+          }
         </View>
       </View>
 
@@ -37,7 +59,27 @@ export default function Balance({ user: { balance, expenses } }: BalanceProps) {
         <Text style={styles.itemTitle}>Gastos</Text>
         <View style={styles.itemContent}>
           <Text style={styles.itemCurrency}>R$</Text>
-          <Text style={styles.itemExpenses}>{convertToCurrency(expenses)}</Text>
+          {
+            showContent ? 
+            <AnimatePresence exitBeforeEnter>
+              <MotiView
+                style={styles.skeleton}
+                from={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ type: 'timing' }}
+              />
+            </AnimatePresence> :
+            <AnimatePresence exitBeforeEnter>
+              <MotiText
+                style={styles.itemExpenses}
+                from={{ translateX: 120 }}
+                animate={{ translateX: 0 }}
+                transition={{ type: 'timing', duration: 320 }}
+              >
+                {convertToCurrency(expenses)}
+              </MotiText> 
+          </AnimatePresence>
+          }
         </View>
       </View>
     </MotiView>
@@ -76,5 +118,11 @@ const styles = StyleSheet.create({
   itemExpenses: {
     color: '#e74c3c',
     fontSize: 22,
+  },
+  skeleton: {
+    marginTop: 6,
+    width: 120,
+    height: 18,
+    backgroundColor: '#DADADA',
   },
 });

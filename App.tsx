@@ -1,17 +1,10 @@
-import { StyleSheet, View } from 'react-native';
+import { ShowContentProvider } from './src/contexts/useShowContent';
 import Home from './src/pages/Home';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ShowContentProvider>
       <Home />
-    </View>
+    </ShowContentProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});

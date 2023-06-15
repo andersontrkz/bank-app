@@ -28,5 +28,33 @@ export default  [
         label: 'Salário',
         type: 0,
         value: 1020,
-    }
+    },
+    {
+        id: 5,
+        date: generateSimpleDateFormat(),
+        label: 'Boleto',
+        type: 0,
+        value: 300,
+    },
+    {
+        id: 6,
+        date: generateSimpleDateFormat(),
+        label: 'Conta',
+        type: 1,
+        value: 500,
+    },
+    {
+        id: 7,
+        date: generateSimpleDateFormat(),
+        label: 'Pix',
+        type: 1,
+        value: 800,
+    },
+    {
+        id: 8,
+        date: generateSimpleDateFormat(),
+        label: 'Salário',
+        type: 0,
+        value: 1020,
+    },
 ]

@@ -1,7 +1,8 @@
-import { StatusBar, StyleSheet, TouchableOpacity, View } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import { MotiView, MotiText } from 'moti';
+import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
+import { MotiView } from 'moti';
 import User from '../../interfaces/User';
+import { useShowContent } from '../../contexts/useShowContent';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 24 : 72;
 
@@ -10,6 +11,8 @@ type HeaderProps = {
 }
 
 export default function Header({ user: { name } }: HeaderProps) {
+  const { showContent, setShowContent } = useShowContent();
+
   return (
     <View style={styles.container}>
       <MotiView style={styles.content} 
@@ -27,7 +30,8 @@ export default function Header({ user: { name } }: HeaderProps) {
         delay: 240,
       }}
       >
-        <MotiText style={styles.username}
+        <MotiView 
+          style={styles.containerLeft}
           from={{
             translateX: -240,
             opacity: 0,
@@ -42,8 +46,17 @@ export default function Header({ user: { name } }: HeaderProps) {
             delay: 480,
           }}
         >
-          {name}
-        </MotiText>
+          <Text style={styles.username}>
+            {name}
+          </Text>
+          <TouchableOpacity style={styles.eyeIcon} activeOpacity={0.5}>
+            {showContent ?
+              <Ionicons name="eye-off-outline" size={24} color="black" onPress={setShowContent} /> :
+              <Ionicons name="eye-outline" size={24} color="black" onPress={setShowContent} />
+            }        
+          </TouchableOpacity>
+        </MotiView>
+  
         <TouchableOpacity style={styles.userIcon} activeOpacity={0.5}>
           <FontAwesome  name="user-o" size={28} color="black" />
         </TouchableOpacity>
@@ -59,6 +72,10 @@ const styles = StyleSheet.create({
     paddingVertical: statusBarHeight ,
     paddingHorizontal: 24,
   },
+  containerLeft: {
+    backgroundColor: '#ffce00',
+    flexDirection: 'row',
+  },
   content: {
     alignItems: 'center',
     backgroundColor: '#ffce00',
@@ -71,6 +88,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
   },
+  eyeIcon: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 16
+  },
   userIcon: {
     alignItems: 'center',
     backgroundColor: 'rgba(255, 255, 255, 0.5)',
@@ -78,5 +100,6 @@ const styles = StyleSheet.create({
     height: 48,
     justifyContent: 'center',
     width: 48,
+    marginLeft: 16
   }
 });

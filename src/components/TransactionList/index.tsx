@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, ScrollView, Text } from 'react-native';
 import TransactionItem from '../../components/TransactionItem';
 import Transaction from '../../interfaces/Transaction';
 
@@ -8,7 +8,7 @@ type TransactionProps = {
 
 export default function TransactionList({ transactions }: TransactionProps) {
   return (
-    <View>
+    <ScrollView showsVerticalScrollIndicator={false}>
       <Text style={styles.title}>Últimas movimentações</Text>
 
       <FlatList 
@@ -17,7 +17,7 @@ export default function TransactionList({ transactions }: TransactionProps) {
         keyExtractor={ (transaction) => String(transaction.id) }
         renderItem={ ({ item }) => <TransactionItem transaction={item} /> }
         />
-    </View>
+    </ScrollView>
   );
 }
 
