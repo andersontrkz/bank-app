@@ -1,5 +1,5 @@
 import { StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons';
 import User from '../../interfaces/User';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 24 : 72;
@@ -14,7 +14,7 @@ export default function Header({ user: { name } }: HeaderProps) {
       <View style={styles.content}>
         <Text style={styles.username}>{name}</Text>
 
-        <TouchableOpacity style={styles.userIcon}>
+        <TouchableOpacity style={styles.userIcon} activeOpacity={0.5}>
           <FontAwesome  name="user-o" size={28} color="black" />
         </TouchableOpacity>
       </View>

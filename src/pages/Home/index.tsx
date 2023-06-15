@@ -1,4 +1,5 @@
 import { StyleSheet, View } from 'react-native';
+import Actions from '../../components/Actions';
 import Balance from '../../components/Balance';
 import Header from '../../components/Header';
 import TransactionList from '../../components/TransactionList';
@@ -12,6 +13,7 @@ export default function Home() {
       
       <Balance user={user} />
 
+      <Actions />
       <TransactionList transactions={transactions} />
     </View>
   );
