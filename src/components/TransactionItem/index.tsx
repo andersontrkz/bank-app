@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { AnimatePresence, MotiText, MotiView } from 'moti';
 import { useShowContent } from '../../contexts/useShowContent';
-import { dateTimeFormat } from '../../utils/datetime';
+import { dateFormat } from '../../utils/datetime';
 import Transaction from '../../interfaces/Transaction';
 import TypeTransaction from '../../enums/TypeTransaction';
 import { formatCurrency } from '../../utils/currency';
@@ -15,7 +15,7 @@ export default function TransactionItem({ transaction }: TransactionProps) {
 
   return (
     <TouchableOpacity style={styles.container} onPress={setShowContent}>
-      <Text style={styles.date}>{dateTimeFormat(transaction.date)}</Text>
+      <Text style={styles.date}>{dateFormat(transaction.date)}</Text>
 
       <View style={styles.content}>
         <Text style={styles.label}>{transaction.label}</Text>
