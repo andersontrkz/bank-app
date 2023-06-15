@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { AnimatePresence, MotiText, MotiView } from 'moti';
 import Transaction from '../../interfaces/Transaction';
 import TypeTransaction from '../../enums/TypeTransaction';
-import { useState } from 'react';
 import { dateTimeFormat } from '../../utils/datetime';
 
 type TransactionProps = {
@@ -19,10 +20,24 @@ export default function TransactionItem({ transaction }: TransactionProps) {
         <Text style={styles.label}>{transaction.label}</Text>
         {
           showValue ? 
-          <Text style={ transaction.type === TypeTransaction.Expense ? styles.expense : styles.income}>
-          {transaction.type === TypeTransaction.Expense ? `R$ -${transaction.value}` : `R$ ${transaction.value}`}
-          </Text> :
-           <View  style={styles.skeleton} />
+          <AnimatePresence exitBeforeEnter>
+            <MotiText
+              style={ transaction.type === TypeTransaction.Expense ? styles.expense : styles.income}
+              from={{ translateX: 120 }}
+              animate={{ translateX: 0 }}
+              transition={{ type: 'spring' }}
+            >
+              {transaction.type === TypeTransaction.Expense ? `R$ -${transaction.value}` : `R$ ${transaction.value}`}
+            </MotiText> 
+          </AnimatePresence> :
+          <AnimatePresence exitBeforeEnter>
+            <MotiView
+              style={styles.skeleton}
+              from={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ type: 'timing' }}
+            />
+          </AnimatePresence>
         }
       </View>
     </TouchableOpacity>
