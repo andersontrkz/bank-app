@@ -1,12 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import Balance from '../../components/Balance';
 import Header from '../../components/Header';
-
-const user = {
-  name: 'Anderson Luiz',
-  balance: 18630.33,
-  expenses: -912.15,
-}
+import transactions from '../../data/transactions';
+import user from '../../data/user';
 
 export default function Home() {
   return (
@@ -14,6 +10,15 @@ export default function Home() {
       <Header user={user} />
       
       <Balance user={user} />
+
+      <Text style={styles.title}>Últimas movimentações</Text>
+
+      <FlatList 
+        style={styles.transactions}
+        data={transactions}
+        keyExtractor={ (transaction) => String(transaction.id) }
+        renderItem={ ({ item }) => <Text>{item.label}</Text> }
+      />
     </View>
   );
 }
@@ -23,4 +28,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  title: {
+    fontSize: 18,
+    fontWeight: '700',
+    marginHorizontal: 16,
+    marginTop: 16,
+  },
+  transactions: {
+    marginHorizontal: 16,
+  }
 });
