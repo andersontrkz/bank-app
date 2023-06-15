@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
     marginHorizontal: 16,
-    marginTop: 16,
+    marginVertical: 16,
   },
   transactions: {
     marginHorizontal: 16,

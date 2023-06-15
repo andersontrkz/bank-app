@@ -20,6 +20,13 @@ export default function Actions() {
 
 			<TouchableOpacity style={styles.action}>
 				<View style={styles.actionButton}>
+					<AntDesign name="creditcard" size={24} color="black" />
+				</View>
+				<Text style={styles.actionLabel}>Cartão</Text>
+			</TouchableOpacity>
+
+			<TouchableOpacity style={styles.action}>
+				<View style={styles.actionButton}>
 					<Ionicons name="wallet-outline" size={24} color="black" />
 				</View>
 				<Text style={styles.actionLabel}>Carteira</Text>
@@ -30,6 +37,20 @@ export default function Actions() {
 					<AntDesign name="barcode" size={24} color="black" />
 				</View>
 				<Text style={styles.actionLabel}>Boletos</Text>
+			</TouchableOpacity>
+
+			<TouchableOpacity style={styles.action}>
+				<View style={styles.actionButton}>
+					<AntDesign name="filetext1" size={24} color="black" />
+				</View>
+				<Text style={styles.actionLabel}>Extratos</Text>
+			</TouchableOpacity>
+
+			<TouchableOpacity style={styles.action}>
+				<View style={styles.actionButton}>
+					<AntDesign name="barschart" size={24} color="black" />
+				</View>
+				<Text style={styles.actionLabel}>Investimentos</Text>
 			</TouchableOpacity>
 
 			<TouchableOpacity style={styles.action}>
