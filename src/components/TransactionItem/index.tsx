@@ -1,21 +1,28 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Transaction from '../../interfaces/Transaction';
 import TypeTransaction from '../../enums/TypeTransaction';
+import { useState } from 'react';
 
 type TransactionProps = {
     transaction: Transaction;
 }
 
 export default function TransactionItem({ transaction }: TransactionProps) {
+  const [showValue, setShowValue] = useState(false);
+
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={ () => setShowValue(!showValue) }>
       <Text style={styles.date}>{transaction.date}</Text>
 
       <View style={styles.content}>
         <Text style={styles.label}>{transaction.label}</Text>
-        <Text style={ transaction.type === TypeTransaction.Expense ? styles.expense : styles.income}>
+        {
+          showValue ? 
+          <Text style={ transaction.type === TypeTransaction.Expense ? styles.expense : styles.income}>
           {transaction.type === TypeTransaction.Expense ? `R$ -${transaction.value}` : `R$ ${transaction.value}`}
-        </Text>
+          </Text> :
+           <View  style={styles.skeleton} />
+        }
       </View>
     </TouchableOpacity>
   );
@@ -52,4 +59,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
   },
+  skeleton: {
+    marginTop: 6,
+    width: 80,
+    height: 12,
+    backgroundColor: '#DADADA',
+  }
 });
