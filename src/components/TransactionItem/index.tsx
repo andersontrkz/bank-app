@@ -2,6 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Transaction from '../../interfaces/Transaction';
 import TypeTransaction from '../../enums/TypeTransaction';
 import { useState } from 'react';
+import { dateTimeFormat } from '../../utils/datetime';
 
 type TransactionProps = {
     transaction: Transaction;
@@ -12,7 +13,7 @@ export default function TransactionItem({ transaction }: TransactionProps) {
 
   return (
     <TouchableOpacity style={styles.container} onPress={ () => setShowValue(!showValue) }>
-      <Text style={styles.date}>{transaction.date}</Text>
+      <Text style={styles.date}>{dateTimeFormat(transaction.date)}</Text>
 
       <View style={styles.content}>
         <Text style={styles.label}>{transaction.label}</Text>
