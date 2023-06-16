@@ -51,14 +51,14 @@ export default function Actions() {
 				<View style={styles.actionButton}>
 					<AntDesign name='barschart' size={24} color='black' />
 				</View>
-				<Text style={styles.actionLabel}>Investimentos</Text>
+				<Text style={styles.actionLabel}>Investir</Text>
 			</TouchableOpacity>
 
 			<TouchableOpacity style={styles.action}>
 				<View style={styles.actionButton}>
 					<Ionicons name='settings-outline' size={24} color='black' />
 				</View>
-				<Text style={styles.actionLabel}>Configurações</Text>
+				<Text style={styles.actionLabel}>Opções</Text>
 			</TouchableOpacity>
 		</ScrollView>
 	);
