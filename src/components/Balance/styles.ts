@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#fff',
+		backgroundColor: colors.white,
 		borderRadius: 8,
 		flexDirection: 'row',
 		justifyContent: 'space-between',
@@ -15,7 +16,7 @@ const styles = StyleSheet.create({
 
 	},
 	itemTitle: {
-		color: '#5f645f',
+		color: colors.grayDark,
 		fontSize: 20,
 	},
 	itemContent: {
@@ -23,22 +24,22 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	itemCurrency: {
-		color: '#5f645f',
+		color: colors.grayDark,
 		marginRight: 6,
 	},
 	itemBalance: {
-		color: '#2ecc71',
+		color: colors.green,
 		fontSize: 22,
 	},
 	itemExpenses: {
-		color: '#e74c3c',
+		color: colors.red,
 		fontSize: 22,
 	},
 	skeleton: {
 		marginTop: 6,
 		width: 120,
 		height: 18,
-		backgroundColor: '#DADADA',
+		backgroundColor: colors.grayMedium,
 	},
 });
 

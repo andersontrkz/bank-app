@@ -1,14 +1,15 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		marginBottom: 24,
 		borderBottomWidth: 0.5,
-		borderBottomColor: '#DADADA',
+		borderBottomColor: colors.grayMedium,
 	},
 	date: {
-		color: '#DADADA',
+		color: colors.grayMedium,
 		fontWeight: '700',
 	},
 	content: {
@@ -22,12 +23,12 @@ const styles = StyleSheet.create({
 		fontWeight: '700',
 	},
 	income: {
-		color: '#2ecc71',
+		color: colors.green,
 		fontSize: 16,
 		fontWeight: '700',
 	},
 	expense: {
-		color: '#e74c3c',
+		color: colors.red,
 		fontSize: 16,
 		fontWeight: '700',
 	},
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
 		marginTop: 6,
 		width: 80,
 		height: 12,
-		backgroundColor: '#DADADA',
+		backgroundColor: colors.grayMedium,
 	},
 });
 

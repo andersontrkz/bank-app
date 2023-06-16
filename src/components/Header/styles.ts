@@ -1,21 +1,22 @@
 import {StatusBar, StyleSheet} from 'react-native';
+import colors from '../../styles/colors';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 24 : 72;
 
 const styles = StyleSheet.create({
 	container: {
-		backgroundColor: '#ffce00',
+		backgroundColor: colors.yellow,
 		flexDirection: 'row',
 		paddingVertical: statusBarHeight,
 		paddingHorizontal: 24,
 	},
 	containerLeft: {
-		backgroundColor: '#ffce00',
+		backgroundColor: colors.yellow,
 		flexDirection: 'row',
 	},
 	content: {
 		alignItems: 'center',
-		backgroundColor: '#ffce00',
+		backgroundColor: colors.yellow,
 		flex: 1,
 		flexDirection: 'row',
 		justifyContent: 'space-between',

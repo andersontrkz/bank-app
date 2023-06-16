@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../styles/colors';
 
 const styles = StyleSheet.create({
 	container: {
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
 		marginRight: 32,
 	},
 	actionButton: {
-		backgroundColor: '#ecf0f1',
+		backgroundColor: colors.grayLight,
 		height: 60,
 		width: 60,
 		borderRadius: 60 / 2,
