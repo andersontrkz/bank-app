@@ -1,10 +1,10 @@
-import { ShowContentProvider } from './src/contexts/useShowContent';
+import {ShowContentProvider} from './src/contexts/useShowContent';
 import Home from './src/pages/Home';
 
 export default function App() {
-  return (
-    <ShowContentProvider>
-      <Home />
-    </ShowContentProvider>
-  );
+	return (
+		<ShowContentProvider>
+			<Home />
+		</ShowContentProvider>
+	);
 }

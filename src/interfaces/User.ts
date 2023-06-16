@@ -1,5 +1,7 @@
-export default interface User {
-    name: string;
-    balance: number;
-    expenses: number;
-}
+type User = {
+	name: string;
+	balance: number;
+	expenses: number;
+};
+
+export default User;
