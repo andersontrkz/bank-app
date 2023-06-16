@@ -1,7 +1,5 @@
 ### Welcome to the Bank App project repository!
 ![mockup_01](https://github.com/andersontrkz/bank-app/blob/main/assets/mockup_01.png?raw=true)
-![mockup_02](https://github.com/andersontrkz/bank-app/blob/main/assets/mockup_02.png?raw=true)
-![mockup_03](https://github.com/andersontrkz/bank-app/blob/main/assets/mockup_03.png?raw=true)
 
 
 # Bank App
@@ -98,6 +96,12 @@ In the root project directory, you can run:
 │
 └── package.json
 ```
+
+
+## Project Screenshots
+
+![mockup_02](https://github.com/andersontrkz/bank-app/blob/main/assets/mockup_02.png?raw=true)
+![mockup_03](https://github.com/andersontrkz/bank-app/blob/main/assets/mockup_03.png?raw=true)
 
 
 ## Contributing
