@@ -35,14 +35,6 @@ export default function Balance({user: {balance, expenses}}: BalanceProps) {
 					{
 						showContent
 							? <AnimatePresence exitBeforeEnter>
-								<MotiView
-									style={styles.skeleton}
-									from={{opacity: 0}}
-									animate={{opacity: 1}}
-									transition={{type: 'timing'}}
-								/>
-							</AnimatePresence>
-							: <AnimatePresence exitBeforeEnter>
 								<MotiText
 									style={styles.itemBalance}
 									from={{translateX: 120}}
@@ -51,6 +43,14 @@ export default function Balance({user: {balance, expenses}}: BalanceProps) {
 								>
 									{formatCurrency(balance)}
 								</MotiText>
+							</AnimatePresence>
+							: <AnimatePresence exitBeforeEnter>
+								<MotiView
+									style={styles.skeleton}
+									from={{opacity: 0}}
+									animate={{opacity: 1}}
+									transition={{type: 'timing'}}
+								/>
 							</AnimatePresence>
 					}
 				</View>
@@ -63,14 +63,6 @@ export default function Balance({user: {balance, expenses}}: BalanceProps) {
 					{
 						showContent
 							? <AnimatePresence exitBeforeEnter>
-								<MotiView
-									style={styles.skeleton}
-									from={{opacity: 0}}
-									animate={{opacity: 1}}
-									transition={{type: 'timing'}}
-								/>
-							</AnimatePresence>
-							: <AnimatePresence exitBeforeEnter>
 								<MotiText
 									style={styles.itemExpenses}
 									from={{translateX: 120}}
@@ -80,6 +72,15 @@ export default function Balance({user: {balance, expenses}}: BalanceProps) {
 									{formatCurrency(expenses)}
 								</MotiText>
 							</AnimatePresence>
+							: <AnimatePresence exitBeforeEnter>
+								<MotiView
+									style={styles.skeleton}
+									from={{opacity: 0}}
+									animate={{opacity: 1}}
+									transition={{type: 'timing'}}
+								/>
+							</AnimatePresence>
+
 					}
 				</View>
 			</View>

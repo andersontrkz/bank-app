@@ -50,8 +50,8 @@ export default function Header({user: {name}}: HeaderProps) {
 					</Text>
 					<TouchableOpacity style={styles.eyeIcon} activeOpacity={0.5}>
 						{showContent
-							? <Ionicons name='eye-off-outline' size={24} color='black' onPress={setShowContent} />
-							: <Ionicons name='eye-outline' size={24} color='black' onPress={setShowContent} />
+							? <Ionicons name='eye-outline' size={24} color='black' onPress={setShowContent} />
+							: <Ionicons name='eye-off-outline' size={24} color='black' onPress={setShowContent} />
 						}
 					</TouchableOpacity>
 				</MotiView>

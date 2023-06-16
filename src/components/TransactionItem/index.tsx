@@ -23,14 +23,6 @@ export default function TransactionItem({transaction}: TransactionProps) {
 				{
 					showContent
 						? <AnimatePresence exitBeforeEnter>
-							<MotiView
-								style={styles.skeleton}
-								from={{opacity: 0}}
-								animate={{opacity: 1}}
-								transition={{type: 'timing'}}
-							/>
-						</AnimatePresence>
-						: <AnimatePresence exitBeforeEnter>
 							<MotiText
 								style={ transaction.type === TypeTransaction.Expense ? styles.expense : styles.income}
 								from={{translateX: 120}}
@@ -39,6 +31,14 @@ export default function TransactionItem({transaction}: TransactionProps) {
 							>
 								{transaction.type === TypeTransaction.Expense ? `R$ -${formatCurrency(transaction.value)}` : `R$ ${formatCurrency(transaction.value)}`}
 							</MotiText>
+						</AnimatePresence>
+						: <AnimatePresence exitBeforeEnter>
+							<MotiView
+								style={styles.skeleton}
+								from={{opacity: 0}}
+								animate={{opacity: 1}}
+								transition={{type: 'timing'}}
+							/>
 						</AnimatePresence>
 				}
 			</View>
