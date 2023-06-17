@@ -104,6 +104,11 @@ In the root project directory, you can run:
 ![mockup_03](https://github.com/andersontrkz/bank-app/blob/main/assets/mockup_03.png?raw=true)
 
 
+## Project Screencasts
+
+![screencast_01](https://github.com/andersontrkz/bank-app/blob/main/assets/screencast_01.png?raw=true)
+
+
 ## Contributing
 
 Contributions are always welcome! If you have any ideas, suggestions, fixes, feel free to contribute. You can do that by going through the following steps:
