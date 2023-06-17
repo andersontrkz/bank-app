@@ -18,13 +18,13 @@ The goal was to develop a modern bank application dashboard with React Native.
 ## Requirements
 
 Create a good user experience:
-    - Usable
+  - Usable
       - If a product is usable, it means that the design, structure and purpose of the product are clear and easy to use.
-    - Equitable
+  - Equitable
       - If a product is equitable, it means that the design is useful for people with diverse abilities and backgrounds.
-    - Enjoyable
+  - Enjoyable
       - If a product is enjoyable, it means that the design delights the user.
-    - Useful
+  - Useful
       - If a product is useful, it means that it solves the user's problems.
 
 
@@ -106,7 +106,7 @@ In the root project directory, you can run:
 
 ## Project Screencasts
 
-![screencast_01](https://github.com/andersontrkz/bank-app/blob/main/assets/screencast_01.png?raw=true)
+![screencast_01](https://raw.githubusercontent.com/andersontrkz/bank-app/main/assets/screencast_01.gif)
 
 
 ## Contributing
